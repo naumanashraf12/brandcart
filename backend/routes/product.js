@@ -10,7 +10,8 @@ const {
 
 const { isAuth } = require("../middlewares/auth");
 
-router.route("/items/search").get(getProducts).post(Products);
+router.route("/items/search").get(getProducts);
+router.route("/items").post(Products);
 router.route("/items/expired").get(endExpiredBids);
 router.route("/items/:id").patch(isAuth, bid);
 

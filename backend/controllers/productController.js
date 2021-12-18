@@ -50,11 +50,11 @@ exports.getProducts = catchPromise(async (req, res, next) => {
 });
 
 exports.Products = catchPromise(async (req, res, next) => {
-  const data = req.body;
+  const { items } = req.body;
 
   let products = [];
-  for (let index = 0; index < data.items.length; index++) {
-    const element = data.items[index];
+  for (let index = 0; index < items.length; index++) {
+    const element = items[index];
     const prod = await Product.findById(element._id);
 
     if (prod) {
@@ -65,11 +65,8 @@ exports.Products = catchPromise(async (req, res, next) => {
     products.push(await Product.create(element));
   }
 
-  data.items = products;
-
   res.status(200).json({
     success: true,
-    ...data,
   });
 });
 
