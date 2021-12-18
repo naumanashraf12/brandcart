@@ -10,8 +10,8 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/api/v1", product);
-app.use("/api/v1", user);
+app.use("/api", product);
+app.use("/api", user);
 app.use(middlewareError);
 
 module.exports = app;

@@ -5,7 +5,8 @@ const catchPromise = require("../middlewares/CatchAsyncError");
 const QuerySearch = require("../utils/apiFeatures");
 
 exports.getProducts = catchPromise(async (req, res, next) => {
-  const resperpage = 20;
+  const resperpage = 25;
+  const size = 25;
   const productsCount = await Product.countDocuments();
 
   let querySearch = new QuerySearch(Product, req.query)
@@ -13,13 +14,38 @@ exports.getProducts = catchPromise(async (req, res, next) => {
     .filterLive()
     .pagination(resperpage);
 
-  let products = await querySearch.query;
+  const page = parseInt(req.query.page) || 1;
+
+  let items = await querySearch.query;
+  let pages = 1;
+  if (!page === 1) {
+    pages = productsCount / 25;
+  }
+
+  const total = {
+    items: productsCount,
+    pages,
+  };
+  let prev = false;
+  if (page > 1) {
+    prev = `https://api.brandauctionjp.com/api/items/search?page=${
+      page - 1
+    }&size=25`;
+  }
+  const pagination = {
+    next: `https://api.brandauctionjp.com/api/items/search?page=${
+      page + 1
+    }&size=25`,
+    prev,
+  };
 
   return res.status(200).json({
     success: true,
-    products,
-    resperpage,
-    productsCount,
+    page,
+    size,
+    total,
+    pagination,
+    items,
   });
 });
 

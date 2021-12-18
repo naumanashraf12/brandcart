@@ -1,197 +1,159 @@
 {
-	"info": {
-		"_postman_id": "7b987d6d-7239-4840-874e-be8d249fffa4",
-		"name": "project",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Create & Update Products",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"page\": 1,\r\n    \"size\": 24,\r\n    \"total\": {\r\n        \"items\": 2010,\r\n        \"pages\": 84\r\n    },\r\n    \"pagination\": {\r\n        \"next\": \"http://api.brandauctionjp.com/api/items/search?page=2&size=24\",\r\n        \"prev\": false\r\n    },\r\n    \"items\": [{\r\n        \"site\": 1,\r\n        \"active\": true,\r\n        \"images\": [\"http://live.brandauction.jp/b2b/out_image.php?kaisaibi=20210923&boxno=1&no=1&type=1&newold=new\"],\r\n        \"flow\": false,\r\n        \"_id\": \"614752ac4d139130d7f03826\",\r\n        \"batch\": 20210923,\r\n        \"dateAuction\": \"2021/09/23\",\r\n        \"desc\": \" \",\r\n        \"desc2\": \" ﾄｰﾄﾊﾞｯｸﾞ  袋 ﾎﾟｰﾁ \",\r\n        \"endBid\": 0,\r\n        \"evaluation\": \"5/5-4\",\r\n        \"idx\": 1,\r\n        \"maker\": \"CELINE\",\r\n        \"name\": \"ﾊﾞｯｸﾞ\",\r\n        \"order\": 1,\r\n        \"receiptNumber\": \"1-1\",\r\n        \"referencePrice\": \"0\",\r\n        \"shape\": \"ﾊﾞｯｸﾞ\",\r\n        \"startBid\": 60000,\r\n        \"type\": \"宝石\",\r\n        \"dateAdded\": \"2021-09-19T15:09:32.384Z\",\r\n        \"category\": \"bags\",\r\n        \"__v\": 0,\r\n        \"completeEvaluation\": \"5/5-4\",\r\n        \"ymd\": \"20210923\",\r\n        \"youbi\": 5,\r\n        \"id\": \"614752ac4d139130d7f03826\"\r\n    }, {\r\n        \"site\": 1,\r\n        \"active\": true,\r\n        \"images\": [\"http://live.brandauction.jp/b2b/out_image.php?kaisaibi=20210923&boxno=1&no=2&type=1&newold=new\"],\r\n        \"flow\": false,\r\n        \"_id\": \"614752ac4d139130d7f0382b\",\r\n        \"batch\": 20210923,\r\n        \"dateAuction\": \"2021/12/17\",\r\n        \"desc\": \"ｷｬﾋﾞｱ\",\r\n        \"desc2\": \" 復刻ﾄｰﾄ   G金具 9番台7桁 ﾊﾝﾄﾞﾙ修理短い\",\r\n        \"endBid\": 0,\r\n        \"evaluation\": \"5-4/4\",\r\n        \"idx\": 2,\r\n        \"maker\": \"CHANEL\",\r\n        \"name\": \"ﾊﾞｯｸﾞ\",\r\n        \"order\": 2,\r\n        \"receiptNumber\": \"1-2\",\r\n        \"referencePrice\": \"0\",\r\n        \"shape\": \"ﾊﾞｯｸﾞ\",\r\n        \"startBid\": 120000,\r\n        \"type\": \"宝石\",\r\n        \"dateAdded\": \"2021-09-19T15:09:32.466Z\",\r\n        \"category\": \"bags\",\r\n        \"__v\": 0,\r\n        \"completeEvaluation\": \"5-4/4\",\r\n        \"ymd\": \"20210923\",\r\n        \"youbi\": 5,\r\n        \"id\": \"614752ac4d139130d7f0382b\"\r\n    }]}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4000/api/v1/products",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"v1",
-						"products"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Products",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4000/api/v1/products",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"v1",
-						"products"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Register",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"danial@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4000/api/v1/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"v1",
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"danial@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4000/api/v1/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"v1",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Bid",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"bid\":20\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4000/api/v1/products/614752ac4d139130d7f0382b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"v1",
-						"products",
-						"614752ac4d139130d7f0382b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Expired",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4000/api/v1/products/expired",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"v1",
-						"products",
-						"expired"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "7b987d6d-7239-4840-874e-be8d249fffa4",
+    "name": "project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create & Update Products",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"page\": 1,\r\n    \"size\": 24,\r\n    \"total\": {\r\n        \"items\": 2010,\r\n        \"pages\": 84\r\n    },\r\n    \"pagination\": {\r\n        \"next\": \"http://api.brandauctionjp.com/api/items/search?page=2&size=24\",\r\n        \"prev\": false\r\n    },\r\n    \"items\": [{\r\n        \"site\": 1,\r\n        \"active\": true,\r\n        \"images\": [\"http://live.brandauction.jp/b2b/out_image.php?kaisaibi=20210923&boxno=1&no=1&type=1&newold=new\"],\r\n        \"flow\": false,\r\n        \"_id\": \"614752ac4d139130d7f03826\",\r\n        \"batch\": 20210923,\r\n        \"dateAuction\": \"2021/09/23\",\r\n        \"desc\": \" \",\r\n        \"desc2\": \" ﾄｰﾄﾊﾞｯｸﾞ  袋 ﾎﾟｰﾁ \",\r\n        \"endBid\": 0,\r\n        \"evaluation\": \"5/5-4\",\r\n        \"idx\": 1,\r\n        \"maker\": \"CELINE\",\r\n        \"name\": \"ﾊﾞｯｸﾞ\",\r\n        \"order\": 1,\r\n        \"receiptNumber\": \"1-1\",\r\n        \"referencePrice\": \"0\",\r\n        \"shape\": \"ﾊﾞｯｸﾞ\",\r\n        \"startBid\": 60000,\r\n        \"type\": \"宝石\",\r\n        \"dateAdded\": \"2021-09-19T15:09:32.384Z\",\r\n        \"category\": \"bags\",\r\n        \"__v\": 0,\r\n        \"completeEvaluation\": \"5/5-4\",\r\n        \"ymd\": \"20210923\",\r\n        \"youbi\": 5,\r\n        \"id\": \"614752ac4d139130d7f03826\"\r\n    }, {\r\n        \"site\": 1,\r\n        \"active\": true,\r\n        \"images\": [\"http://live.brandauction.jp/b2b/out_image.php?kaisaibi=20210923&boxno=1&no=2&type=1&newold=new\"],\r\n        \"flow\": false,\r\n        \"_id\": \"614752ac4d139130d7f0382b\",\r\n        \"batch\": 20210923,\r\n        \"dateAuction\": \"2021/12/17\",\r\n        \"desc\": \"ｷｬﾋﾞｱ\",\r\n        \"desc2\": \" 復刻ﾄｰﾄ   G金具 9番台7桁 ﾊﾝﾄﾞﾙ修理短い\",\r\n        \"endBid\": 0,\r\n        \"evaluation\": \"5-4/4\",\r\n        \"idx\": 2,\r\n        \"maker\": \"CHANEL\",\r\n        \"name\": \"ﾊﾞｯｸﾞ\",\r\n        \"order\": 2,\r\n        \"receiptNumber\": \"1-2\",\r\n        \"referencePrice\": \"0\",\r\n        \"shape\": \"ﾊﾞｯｸﾞ\",\r\n        \"startBid\": 120000,\r\n        \"type\": \"宝石\",\r\n        \"dateAdded\": \"2021-09-19T15:09:32.466Z\",\r\n        \"category\": \"bags\",\r\n        \"__v\": 0,\r\n        \"completeEvaluation\": \"5-4/4\",\r\n        \"ymd\": \"20210923\",\r\n        \"youbi\": 5,\r\n        \"id\": \"614752ac4d139130d7f0382b\"\r\n    }]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Products",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/items/search",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"danial@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"danial@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bid",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"bid\":20\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/items/614752ac4d139130d7f0382b",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "products", "614752ac4d139130d7f0382b"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Expired",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/items/expired",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "products", "expired"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
