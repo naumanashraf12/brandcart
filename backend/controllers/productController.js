@@ -28,14 +28,12 @@ exports.getProducts = catchPromise(async (req, res, next) => {
   };
   let prev = false;
   if (page > 1) {
-    prev = `https://api.brandauctionjp.com/api/items/search?page=${
+    prev = `https://postcode-user.herokuapp.com/search?page=${
       page - 1
     }&size=25`;
   }
   const pagination = {
-    next: `https://api.brandauctionjp.com/api/items/search?page=${
-      page + 1
-    }&size=25`,
+    next: `https://postcode-user.herokuapp.com/search?page=${page + 1}&size=25`,
     prev,
   };
 
