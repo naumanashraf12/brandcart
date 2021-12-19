@@ -28,12 +28,14 @@ exports.getProducts = catchPromise(async (req, res, next) => {
   };
   let prev = false;
   if (page > 1) {
-    prev = `https://postcode-user.herokuapp.com/search?page=${
+    prev = `http://brandcart.herokuapp.com/api/items/search?page=${
       page - 1
     }&size=25`;
   }
   const pagination = {
-    next: `https://postcode-user.herokuapp.com/search?page=${page + 1}&size=25`,
+    next: `http://brandcart.herokuapp.com/api/items/search?page=${
+      page + 1
+    }&size=25`,
     prev,
   };
 
