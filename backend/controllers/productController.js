@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const Product = require("../models/productModel");
 const User = require("../models/userModel");
 const ErrorHandler = require("../utils/ErrorHandler");
@@ -130,5 +132,26 @@ exports.endExpiredBids = catchPromise(async (req, res, next) => {
     success: true,
     results: products.length,
     products,
+  });
+});
+
+exports.test = catchPromise(async (req, res, next) => {
+  const url =
+    "https://brandcart.co.jp/api/get.php?__token=JKLJKSDLKS2UgJ/aGaWLKJLKSJDISUAD4zMQDYKMYX";
+
+  console.log(1);
+
+  //sotring response
+  const response = await axios.get(url);
+  console.log(2);
+
+  //Storing data in form of JSON
+  var data = await response.json();
+  console.log(3);
+
+  res.status(200).json({
+    message: "test",
+    response,
+    data,
   });
 });
