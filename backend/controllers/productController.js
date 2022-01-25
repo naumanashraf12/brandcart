@@ -136,22 +136,31 @@ exports.endExpiredBids = catchPromise(async (req, res, next) => {
 });
 
 exports.test = catchPromise(async (req, res, next) => {
-  const url =
-    "https://brandcart.co.jp/api/get.php?__token=JKLJKSDLKS2UgJ/aGaWLKJLKSJDISUAD4zMQDYKMYX";
+  try {
+    const url =
+      "https://brandcart.co.jp/api/get.php?__token=JKLJKSDLKS2UgJ/aGaWLKJLKSJDISUAD4zMQDYKMYX";
 
-  console.log(1);
+    console.log(1);
 
-  //sotring response
-  const response = await axios.get(url);
-  console.log(2);
+    //sotring response
+    const response = await axios.get(url);
+    console.log(2);
 
-  //Storing data in form of JSON
-  var data = await response.json();
-  console.log(3);
+    //Storing data in form of JSON
+    var data = await response.json();
+    console.log(3);
 
-  res.status(200).json({
-    message: "test",
-    response,
-    data,
-  });
+    res.status(200).json({
+      message: "test",
+      response,
+      data,
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "error",
+      message: err.message,
+      error: err,
+      stack: err.stack,
+    });
+  }
 });
