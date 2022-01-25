@@ -138,7 +138,7 @@ exports.endExpiredBids = catchPromise(async (req, res, next) => {
 exports.test = catchPromise(async (req, res, next) => {
   try {
     const url =
-      "https://brandcart.co.jp/api/get.php?__token=JKLJKSDLKS2UgJ/aGaWLKJLKSJDISUAD4zMQDYKMYX";
+      "https://brandcartjapan.com/api/get.php?__token=ksjaw7aF83y92032ndjshRd";
 
     console.log(1);
 
